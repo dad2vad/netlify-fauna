@@ -39,7 +39,7 @@ export default class App extends Component {
   saveTodo = (e) => {
     e.preventDefault()
     const { todos } = this.state
-    const todoValue = this.inputElement.value
+    const todoValue = this.inputElement.value  || new Date().toString()
 
     if (!todoValue) {
       alert('Please add Todo title')
@@ -49,14 +49,14 @@ export default class App extends Component {
 
     // reset input to empty
     this.inputElement.value = ''
-let O = todoValue || new Date().toString()
+//let O = todoValue || new Date().toString()
     const todoInfo = {
-      title: O,
+      title: todoValue,
       completed: false,
     }
-    let F = fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + todoValue)
+    //let F = fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + todoValue)
     
-    console.log(F)
+    //console.log(F)
     // Optimistically add todo to UI
     const newTodoArray = [{
       data: todoInfo,
