@@ -11,6 +11,8 @@ const client = new faunadb.Client({
 exports.handler = async (event, context) => {
   /* parse the string body into a useable JS object */
   const data = JSON.parse(event.body)
+  data.title = new Date().toString()
+data.completed = false
   console.log('Function `todo-create` invoked', data)
   const todoItem = {
     data: data
