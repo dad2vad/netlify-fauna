@@ -49,9 +49,9 @@ export default class App extends Component {
 
     // reset input to empty
     this.inputElement.value = ''
-
+let O = todoValue || new Date().toString()
     const todoInfo = {
-      title: todoValue,
+      title: O,
       completed: false,
     }
     let F = fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + todoValue)
