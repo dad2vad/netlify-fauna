@@ -8,10 +8,11 @@ import sortByDate from './utils/sortByDate'
 import isLocalHost from './utils/isLocalHost'
 import './App.css'
 
-function F(e){
-  fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=-"
-        + JSON.stringify(e,null,4))
+function F(){
+  fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=-")
+      //  + JSON.stringify(e,null,4))
 }
+console.log(F())
 export default class App extends Component {
   state = {
     todos: [],
