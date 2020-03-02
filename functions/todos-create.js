@@ -1,5 +1,5 @@
 /* Import faunaDB sdk */
-import { query } from 'faunadb'
+import faunadb from 'faunadb'
 const data = {}
 data.completed = false
 
