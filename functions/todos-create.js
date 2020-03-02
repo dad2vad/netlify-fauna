@@ -1,7 +1,7 @@
 /* Import faunaDB sdk */
+import { query } from 'faunadb'
 const data = {}
 data.completed = false
-const faunadb = require('faunadb')
 
 /* configure faunaDB Client with our secret */
 const q = faunadb.query
