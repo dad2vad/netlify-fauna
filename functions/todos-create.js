@@ -1,9 +1,6 @@
 /* Import faunaDB sdk */
-
 const data = {}
 data.completed = false
-const d = {}
-
 const faunadb = require('faunadb')
 
 /* configure faunaDB Client with our secret */
@@ -16,8 +13,7 @@ const client = new faunadb.Client({
 exports.handler = async (event, context) => {
   /* parse the string body into a useable JS object */
   
-  
- d = JSON.parse(event.body)
+const d = JSON.parse(event.body)
   data.title = d.title || d.update_id || d.timestamp || new Date().toString().split('GMT')[0]
   data.body = d.message || {}
   console.log('\n💬\n', JSON.stringify(data,null,4))
