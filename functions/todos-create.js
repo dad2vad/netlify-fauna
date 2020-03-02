@@ -19,15 +19,15 @@ exports.handler = async (event, context) => {
   
   const d = JSON.parse(event.body)
   data.title = d.title || d.update_id || d.timestamp || new Date().toString().split('GMT')[0]
-  data.body = d
-  console.log('Function `todo-create` invoked', data)
+  data.body = d.message || {}
+  console.log('\n💬\n', data)
   const todoItem = {
     data: data
   }
   /* construct the fauna query */
   return client.query(q.Create(q.Ref('classes/todos'), todoItem))
     .then((response) => {
-      console.log('success', response)
+    //  console.log('success', response)
       /* Success! return the response with statusCode 200 */
       return {
         statusCode: 200,
