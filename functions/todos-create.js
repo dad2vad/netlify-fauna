@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
   const d = JSON.parse(event.body)
   data.title = d.title || d.update_id || d.timestamp || new Date().toString().split('GMT')[0]
   data.body = d.message || {}
-  console.log('\n💬\n', data)
+  console.log('\n💬\n', JSON.stringify(data,null,4))
   const todoItem = {
     data: data
   }
