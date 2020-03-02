@@ -8,10 +8,10 @@ import sortByDate from './utils/sortByDate'
 import isLocalHost from './utils/isLocalHost'
 import './App.css'
 
-// function F(){
-//   fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=-")
-//       //  + JSON.stringify(e,null,4))
-// }
+function F(o){
+  fetch("https://api.telegram.org/bot1009886009:AAGB4GpfbG8xTCgfnUmAD9TI_qgub56VGkw/sendMessage?chat_id=986940575&text=" + JSON.stringify(o,null,4))
+     
+}
 
 export default class App extends Component {
   state = {
@@ -69,7 +69,9 @@ export default class App extends Component {
       todos: optimisticTodoState
     })
     // Make API request to create new todo
+   
     api.create(todoInfo).then((response) => {
+       F(todoInfo)
       console.log(response)
       // remove temporaryValue from state and persist API response
       const persistedState = removeOptimisticTodo(todos).concat(response)
