@@ -10,7 +10,7 @@ const client = new faunadb.Client({
 })
 
 /* export our lambda function as named "handler" export */
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   /* parse the string body into a useable JS object */
   
 const d = JSON.parse(event.body)
