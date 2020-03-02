@@ -4,7 +4,7 @@ const data = {}
 data.completed = false
 const d = {}
 
-import { query, Client } from 'faunadb'
+const faunadb = require('faunadb')
 
 /* configure faunaDB Client with our secret */
 const q = faunadb.query
