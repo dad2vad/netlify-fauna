@@ -4,7 +4,7 @@ const data = {}
 data.completed = false
 const d = {}
 
-const faunadb = require('faunadb')
+import { query, Client } from 'faunadb'
 
 /* configure faunaDB Client with our secret */
 const q = faunadb.query
@@ -13,11 +13,11 @@ const client = new faunadb.Client({
 })
 
 /* export our lambda function as named "handler" export */
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   /* parse the string body into a useable JS object */
   
   
-  const d = JSON.parse(event.body)
+ d = JSON.parse(event.body)
   data.title = d.title || d.update_id || d.timestamp || new Date().toString().split('GMT')[0]
   data.body = d.message || {}
   console.log('\n💬\n', JSON.stringify(data,null,4))
